@@ -8851,56 +8851,57 @@ Va:function Va(a){this.a=a},
 aq4:function aq4(){},
 z6:function z6(a){this.c=a},
 aii:function aii(){},
-aVt(a){var s,r,q,p,o,n,m="notification",l="imageUrl",k="sound",j="sentTime"
+aVt(a){var s,r,q,p,o,n,m,l="notification",k="imageUrl",j="sound",i="sentTime"
 a.i(0,"senderId")
 a.i(0,"category")
 a.i(0,"collapseKey")
 a.i(0,"contentAvailable")
-if(a.i(0,"data")!=null)A.h7(a.i(0,"data"),t.N,t.z)
+s=t.N
+r=t.z
+q=a.i(0,"data")==null?A.y(s,r):A.h7(a.i(0,"data"),s,r)
 a.i(0,"from")
-s=a.i(0,"messageId")
-if(s!=null)J.d5(s)
+p=a.i(0,"messageId")
+if(p!=null)J.d5(p)
 a.i(0,"messageType")
 a.i(0,"mutableContent")
-if(a.i(0,m)==null)s=null
-else{s=t.N
-r=t.z
-q=A.h7(a.i(0,m),s,r)
-p=q.i(0,"title")
-A.aWS(q.i(0,"titleLocArgs"))
-q.i(0,"titleLocKey")
-o=q.i(0,"body")
-A.aWS(q.i(0,"bodyLocArgs"))
-q.i(0,"bodyLocKey")
-if(q.i(0,"android")!=null){n=A.h7(q.i(0,"android"),s,r)
-n.i(0,"channelId")
-n.i(0,"clickAction")
-n.i(0,"color")
-n.i(0,"count")
-n.i(0,l)
-n.i(0,"link")
-A.bly(n.i(0,"priority"))
-n.i(0,"smallIcon")
-n.i(0,k)
-n.i(0,"ticker")
-n.i(0,"tag")
-A.blz(n.i(0,"visibility"))}if(q.i(0,"apple")!=null){n=A.h7(q.i(0,"apple"),s,r)
-n.i(0,"badge")
-n.i(0,"subtitle")
-A.aWS(n.i(0,"subtitleLocArgs"))
-n.i(0,"subtitleLocKey")
-n.i(0,l)
-if(n.i(0,k)!=null){n=A.h7(n.i(0,k),s,r)
-n.i(0,"critical")
-n.i(0,"name")
-n.i(0,"volume")}}if(q.i(0,"web")!=null){s=A.h7(q.i(0,"web"),s,r)
+if(a.i(0,l)==null)s=null
+else{p=A.h7(a.i(0,l),s,r)
+o=p.i(0,"title")
+A.aWS(p.i(0,"titleLocArgs"))
+p.i(0,"titleLocKey")
+n=p.i(0,"body")
+A.aWS(p.i(0,"bodyLocArgs"))
+p.i(0,"bodyLocKey")
+if(p.i(0,"android")!=null){m=A.h7(p.i(0,"android"),s,r)
+m.i(0,"channelId")
+m.i(0,"clickAction")
+m.i(0,"color")
+m.i(0,"count")
+m.i(0,k)
+m.i(0,"link")
+A.bly(m.i(0,"priority"))
+m.i(0,"smallIcon")
+m.i(0,j)
+m.i(0,"ticker")
+m.i(0,"tag")
+A.blz(m.i(0,"visibility"))}if(p.i(0,"apple")!=null){m=A.h7(p.i(0,"apple"),s,r)
+m.i(0,"badge")
+m.i(0,"subtitle")
+A.aWS(m.i(0,"subtitleLocArgs"))
+m.i(0,"subtitleLocKey")
+m.i(0,k)
+if(m.i(0,j)!=null){m=A.h7(m.i(0,j),s,r)
+m.i(0,"critical")
+m.i(0,"name")
+m.i(0,"volume")}}if(p.i(0,"web")!=null){s=A.h7(p.i(0,"web"),s,r)
 s.i(0,"analyticsLabel")
 s.i(0,"image")
-s.i(0,"link")}s=new A.atA(p,o)}if(a.i(0,j)!=null)A.pL(A.ea(J.d5(a.i(0,j)),null),0,!1)
+s.i(0,"link")}s=new A.atA(o,n)}if(a.i(0,i)!=null)A.pL(A.ea(J.d5(a.i(0,i)),null),0,!1)
 a.i(0,"threadId")
 a.i(0,"ttl")
-return new A.vj(s)},
-vj:function vj(a){this.y=a},
+return new A.vj(q,s)},
+vj:function vj(a,b){this.e=a
+this.y=b},
 aWS(a){if(a==null)return A.b([],t.s)
 return A.fb(a,!0,t.N)},
 atA:function atA(a,b){this.d=a
@@ -106794,12 +106795,11 @@ A.ard.prototype={
 $1(a){var s,r,q,p,o,n,m=a.y,l=m==null
 A.bX().$1("Received foreground message: "+A.i(l?null:m.d))
 try{p=l?null:m.d
-s=p==null?"Nova Notifica\xe7\xe3o":p
+s=p==null?a.e.i(0,"title"):p
 o=l?null:m.r
-r=o==null?"":o
-if(A.are()==="granted"){m=$.b7C().i(0,"Notification")
-l=t.N
-l=A.a6(["body",r,"icon","icons/Icon-192.png"],l,l)
+r=o==null?a.e.i(0,"body"):o
+if(s!=null&&r!=null&&A.are()==="granted"){m=$.b7C().i(0,"Notification")
+l=A.a6(["body",r,"icon","icons/Icon-192.png"],t.N,t.z)
 A.bcO(m,[s,A.rP(A.bcP(l))])}}catch(n){q=A.T(n)
 A.bX().$1("Error showing foreground web notification: "+A.i(q))}},
 $S:700}
